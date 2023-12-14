@@ -36,6 +36,18 @@ app.get("/greeting/:name", (req, res) => {
     res.send(`<h1>Hello, ${name}</h1>`)
 })
 
+//***************************** */
+//TIP CALCULATOR
+//****************************** */
+app.get("/tip/:total/:tipPercentage", (req, res) => {
+    const total = req.params.total
+    const tipPercentage = req.params.tipPercentage
+    const tip = total * (tipPercentage / 100)
+    res.send(`<p>${tip}</p>`)
+})
+
+
+
 //********************************** */
 //TURNINGON SERVER LISTENER
 //WILL TELL OUR APP TO LISTEN FOR REQUESTS
